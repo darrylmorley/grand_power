@@ -1,0 +1,83 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id           Int    @id @unique
+  name         String
+  fullPathName String
+}
+
+model Gun {
+  id              String  @id
+  itemID          String
+  archived        Boolean
+  description     String?
+  customSku       String
+  manufacturerSku String?
+  categoryID      Int
+  itemMatrixID    Int
+  manufacturerID  Int
+  Category        Json?
+  ItemAttributes  Json?
+  Manufacturer    Json?
+  ItemShops       Json?
+  Images          Json?
+  ItemECommerce   Json?
+  Prices          Json
+}
+
+model Manufacturer {
+  id    Int     @id @unique
+  name  String
+  image String?
+}
+
+model Product {
+  id                Int      @id @unique
+  matrixID          Int
+  sku               String
+  manufacturerSku   String
+  name              String
+  qoh               Int
+  price             Float
+  salePrice         Float
+  shortDescription  String?
+  longDescription   String?
+  Category          Json?
+  Manufacturer      Json?
+  Images            Json?
+  ItemAttributes    Json?
+  CustomFieldValues Json?
+  ItemECommerce     Json?
+  ItemShops         Json?
+  Review            Review[]
+}
+
+model Review {
+  id        String  @id
+  itemID    Int
+  user      String
+  userEmail String
+  rating    Int
+  Product   Product @relation(fields: [itemID], references: [id])
+}
+
+model matrixProduct {
+  id               Int     @id @unique
+  name             String
+  Category         Json?
+  Manufacturer     Json?
+  ItemAttributeSet Json?
+  Items            Json?
+  Images           Json?
+  price            Float
+  salePrice        Float
+  shortDescription String?
+  longDescription  String?
+}

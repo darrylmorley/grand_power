@@ -1,10 +1,14 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import { fetchProducts } from "../../../prisma/products";
+const products = await fetchProducts()
+console.log(products)
 ---
 
 <BaseLayout pageTitle="Products | Grand Power UK">
   <div>
     <img src="" alt="" />
   </div>
-  <div class="h-full bg-white mx-96 rounded"></div>
+  
 </BaseLayout>

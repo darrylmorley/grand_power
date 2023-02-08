@@ -14,11 +14,13 @@
 		"@fontsource/oswald": "^4.5.12",
 		"@fontsource/poppins": "^4.5.10",
 		"@fontsource/titillium-web": "^4.5.9",
+		"@prisma/client": "^4.10.0",
 		"astro": "^2.0.8",
 		"tailwindcss": "^3.2.4"
 	},
 	"devDependencies": {
 		"prettier": "^2.8.4",
-		"prettier-plugin-tailwindcss": "^0.2.2"
+		"prettier-plugin-tailwindcss": "^0.2.2",
+		"prisma": "^4.10.0"
 	}
 }
