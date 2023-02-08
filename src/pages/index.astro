@@ -1,12 +1,14 @@
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1 class="text-4xl text-blue-700 font-bold">Astro</h1>
-  </body>
-</html>
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+---
+
+<BaseLayout pageTitle="Grand Power UK | High Quality Firearms">
+  <div class="h-[100vh] bg-[url('/images/home_gp_bg.jpg')] bg-slate-600 bg-blend-overlay">
+    <Header />
+    <div class="grid h-[calc(100vh-25%)] place-items-center">
+      <img src="/images/home_white_logo_grandpower_uk.png" width="50%" alt="" />
+    </div>
+  </div>
+  <div class="h-[100vh]"></div>
+</BaseLayout>

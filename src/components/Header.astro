@@ -1,0 +1,42 @@
+<header>
+  <nav class="h-1/5 flex justify-center items-center py-8">
+    <!-- <div>
+      <a href="/">
+        <img
+          src="/images/logo_grand_power_circle_uk.png"
+          width="60px"
+          class="flex align-middle"
+          alt=""
+        />
+      </a>
+    </div> -->
+    <ul
+      class="w-full flex justify-around lg:w-1/2 px-12 lg:px-56 lg:text-3xl text-white font-bold font-poppins uppercase"
+    >
+      <li>
+        <div class="dropdown inline-block relative">
+          <a href="/products" class="uppercase hover:text-bronze cursor-pointer shrink"
+            >Products</a
+          >
+          <div class="dropdown-menu absolute opacity-0 px-2 py-1">
+            <a href="/products/k22" class="hover:text-bronze cursor-pointer">K22</a>
+            <a href="/products/stribog" class="hover:text-bronze cursor-pointer"
+              >Stribog</a
+            >
+          </div>
+        </div>
+      </li>
+      <li class="hover:text-bronze cursor-pointer shrink"><a href="/media">Media</a></li>
+      <li class="hover:text-bronze cursor-pointer shrink">
+        <a href="/contact">Contact</a>
+      </li>
+      <li class="hover:text-bronze cursor-pointer shrink"><a href="/about">About</a></li>
+    </ul>
+  </nav>
+  <style>
+    .dropdown:hover .dropdown-menu {
+      transition: opacity 0.5s ease-in-out;
+      opacity: 1;
+    }
+  </style>
+</header>
