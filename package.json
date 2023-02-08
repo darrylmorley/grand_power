@@ -16,5 +16,9 @@
 		"@fontsource/titillium-web": "^4.5.9",
 		"astro": "^2.0.8",
 		"tailwindcss": "^3.2.4"
+	},
+	"devDependencies": {
+		"prettier": "^2.8.4",
+		"prettier-plugin-tailwindcss": "^0.2.2"
 	}
 }

@@ -6,9 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        oswald: ["Oswald"],
-        poppins: ["Poppins"],
-        titillium: ['"Titillium Web"'],
+       'sans': ['Titillium Web', ...defaultTheme.fontFamily.sans]
       },
       colors: {
         bronze: "#A79258",
