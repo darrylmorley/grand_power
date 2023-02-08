@@ -4,10 +4,19 @@ import Header from "../components/Header.astro";
 ---
 
 <BaseLayout pageTitle="Grand Power UK | High Quality Firearms">
-    <div class="grid h-[calc(100vh-25%)] place-items-center">
-      <img src="/images/home_white_logo_grandpower_uk.png" width="50%" alt="" />
-      <p class="text-white text-xl mx-96 text-center">Grand Power produce high quality firearms using the latest in machining technology from their workshop in Slovakia</p>
-      <a href="/products" class="bg-bronze hover:bg-white text-white hover:text-bronze px-8 py-4 uppercase rounded font-semibold">Shop Now</a>
-    </div>
- 
+  <div class="grid h-[calc(100vh-25%)] place-items-center">
+    <img src="/images/home_white_logo_grandpower_uk.png" width="50%" alt="" />
+    <p class="text-white text-xl mx-[30%] text-center">
+      Grand Power produce high quality firearms using the latest in machining technology
+      from their workshop in Slovakia.
+    </p>
+    <a
+      href="/products"
+      class="group relative bg-bronze text-white px-8 py-4 uppercase rounded font-semibold text-lg"
+      ><div
+        class="absolute inset-0 w-0 bg-white transition-all duration-500 ease-out group-hover:w-full rounded"
+      >
+      </div><span class="relative text-white group-hover:text-bronze">Shop Now</span></a
+    >
+  </div>
 </BaseLayout>

@@ -1,19 +1,27 @@
 ---
-const {home} = Astro.props
-const navClasses = home ? 'h-1/5 py-8 text-xl text-white uppercase font-bold' : 'bg-white h-1/5 py-8 text-xl text-black uppercase font-bold'
-const textClasses = home ? 'text-bronze hover:text-white cursor-pointer' : 'text-bronze hover:text-black cursor-pointer'
-const dropdownBgClasses = home ? 'dropdown-menu absolute opacity-0 px-2 py-1' : 'bg-white px-4 py-4 rounded dropdown-menu absolute opacity-0'
+const { home } = Astro.props;
+const navClasses = home
+  ? "h-1/5 py-8 text-lg text-white uppercase font-bold"
+  : "bg-white h-1/5 py-8 text-lg text-black uppercase font-bold";
+
+const textClasses = home
+  ? "text-bronze hover:text-white cursor-pointer"
+  : "text-bronze hover:text-black cursor-pointer";
+
+const dropdownBgClasses = home
+  ? "dropdown-menu absolute opacity-0 px-4 py-4 shadow"
+  : "bg-white px-4 py-4 rounded dropdown-menu absolute opacity-0";
 ---
 
 <header>
   <nav class={navClasses}>
-    <ul
-      class="flex justify-center items-center space-x-8"
-    >
-    <li class={textClasses}><a href="/">Grand Power</a></li>
+    <ul class="flex justify-center items-center space-x-8">
+      <li class={textClasses}><a href="/">Grand Power</a></li>
       <li>
         <div class="dropdown inline-block relative">
-          <a href="/products" class="uppercase hover:text-bronze cursor-pointer shrink"
+          <a
+            href="/products"
+            class="uppercase hover:text-bronze active:text-bronze cursor-pointer shrink"
             >Products</a
           >
           <div class={dropdownBgClasses}>
