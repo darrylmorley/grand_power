@@ -4,6 +4,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { fetchProducts } from "../../../prisma/products";
 const products = await fetchProducts()
 console.log(products)
+let stribog = products.filter(product => product.Category?.categoryID === '64')
+let k22 = products.filter(product => product.Category?.categoryID === '113')
 ---
 
 <BaseLayout pageTitle="Products | Grand Power UK">
