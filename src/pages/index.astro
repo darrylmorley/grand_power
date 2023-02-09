@@ -22,4 +22,94 @@ import Nav from "../components/Nav.astro";
       >
     </div>
   </div>
+  <div class="h-[100vh] py-24">
+    <h2 class="text-center font-oswald text-5xl font-bold uppercase">
+      Our <span class="text-bronze">Products</span>
+    </h2>
+    <div class="mx-[600px]">
+      <p class="mt-8 text-center">
+        We have the K22 line of long barrel pistols especially for the UK market, and the
+        excellent Stribog semi auto rifle available with either a 12" or 16" barrel.
+      </p>
+    </div>
+
+    <div class="mt-8 flex justify-center">
+      <a href="/products/k22">
+        <div class="relative rounded hover:text-bronze hover:shadow-2xl">
+          <img
+            src="/images/grand_power_k22r_rh_adjusted.png"
+            alt="Gran Power K22 R Pistol"
+            width="500px"
+          />
+          <h3 class="absolute bottom-10 right-10 font-oswald text-3xl font-bold">K22</h3>
+        </div>
+      </a>
+      <a href="/products/stribog">
+        <div class="relative rounded hover:text-bronze hover:shadow-2xl">
+          <img
+            src="/images/grand_power_stribog_16.png"
+            alt="Grand Power Stribog 16inch Barrel Version"
+            width="500px"
+          />
+          <h3 class="absolute bottom-10 right-10 font-oswald text-3xl font-bold">
+            STRIBOG
+          </h3>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="h-[100vh] bg-bronze">
+    <div class="py-24">
+      <h2 class="text-center font-oswald text-5xl font-bold uppercase text-white">
+        Grand Power History
+      </h2>
+      <div class="mx-24 my-24 grid grid-cols-2 p-4 text-lg text-white">
+        <div class="space-y-4">
+          <p>
+            If you visit GRAND POWER in Banská Bystrica – Slovenská Ľupča today, you will
+            find that it is a well-equipped and prosperous company employing over 100
+            people. However, none of this would be true if its founder and owner, Mr.
+            Jaroslav Kuracina, was not smart and stubborn.
+          </p>
+          <p>
+            He got his passion for weapons from his grandfather who was a partisan during
+            the WWII. His grandpa was also a hunter; he had a lot of weapons and he used
+            to take his grandchild to a shooting range.
+          </p>
+          <p>
+            Weapons became Jaro´s hobby. He drew his first weapon as a teenager. He
+            continued with his drawing while studying at the Military School. His
+            colleagues used to call him “Piccaso”. He told his superior the people would
+            use his guns one day. Instead of encouragement, he only heard sarcastic
+            comments like: “Hell will freeze over first before they do so”. However, the
+            young soldier was not put off by this. His first serious sketches date back to
+            1994. Just three years later the first functional prototype, marked Q200 with
+            serial number E001, was made in Kinex Grand – a subsidiary of Kinex Bytča.
+          </p>
+          <div class="pt-8">
+            <a
+              href="/about"
+              class="group relative rounded bg-white px-8 py-4 text-lg font-semibold uppercase text-black"
+              ><div
+                class="absolute inset-0 w-0 rounded bg-black transition-all duration-500 ease-out group-hover:w-full"
+              >
+              </div><span class="relative text-bronze group-hover:text-bronze"
+                >Read More</span
+              ></a
+            >
+          </div>
+        </div>
+        <div class="flex w-full items-center justify-center p-4">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/wPzULkOnuOU"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
 </BaseLayout>
