@@ -1,6 +1,6 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
 export async function fetchProducts() {
   try {
@@ -13,7 +13,7 @@ export async function fetchProducts() {
           {
             Manufacturer: {
               path: "manufacturerID",
-              equals: '417',
+              equals: "417",
             },
           },
           {
@@ -29,9 +29,9 @@ export async function fetchProducts() {
         ],
       },
     });
-    prisma.$disconnect
-    return data
+    prisma.$disconnect;
+    return data;
   } catch (error) {
-    console.error(error, brand);
+    console.error(error);
   }
 }
