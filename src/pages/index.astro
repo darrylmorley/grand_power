@@ -1,22 +1,25 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Header from "../components/Header.astro";
+import Nav from "../components/Nav.astro";
 ---
 
 <BaseLayout pageTitle="Grand Power UK | High Quality Firearms">
-  <div class="grid h-[calc(100vh-25%)] place-items-center">
-    <img src="/images/home_white_logo_grandpower_uk.png" width="50%" alt="" />
-    <p class="text-white text-xl mx-[30%] text-center">
-      Grand Power produce high quality firearms using the latest in machining technology
-      from their workshop in Slovakia.
-    </p>
-    <a
-      href="/products"
-      class="group relative bg-bronze text-white px-8 py-4 uppercase rounded font-semibold text-lg"
-      ><div
-        class="absolute inset-0 w-0 bg-white transition-all duration-500 ease-out group-hover:w-full rounded"
+  <div class="h-[100vh] bg-gray-700 bg-[url('/images/home_gp_bg.jpg')] bg-blend-overlay">
+    <Nav home={true} />
+    <div class="grid h-[calc(100vh-25%)] place-items-center">
+      <img src="/images/home_white_logo_grandpower_uk.png" width="50%" alt="" />
+      <p class="mx-[30%] text-center text-xl text-white">
+        Grand Power produce high quality firearms using the latest in machining technology
+        from their workshop in Slovakia.
+      </p>
+      <a
+        href="/products"
+        class="group relative rounded bg-bronze px-8 py-4 text-lg font-semibold uppercase text-white"
+        ><div
+          class="absolute inset-0 w-0 rounded bg-white transition-all duration-500 ease-out group-hover:w-full"
+        >
+        </div><span class="relative text-white group-hover:text-bronze">Shop Now</span></a
       >
-      </div><span class="relative text-white group-hover:text-bronze">Shop Now</span></a
-    >
+    </div>
   </div>
 </BaseLayout>

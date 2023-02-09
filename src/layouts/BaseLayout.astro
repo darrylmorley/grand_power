@@ -2,24 +2,30 @@
 import Header from "../components/Header.astro";
 // import Footer from "../components/Footer.astro";
 const { pageTitle } = Astro.props;
-const {pathname} = Astro.url
-let pageHeading = pageTitle.substring(0, pageTitle.indexOf('|'))
+const { pathname } = Astro.url;
+let pageHeading = pageTitle.substring(0, pageTitle.indexOf("|"));
 ---
 
 <html lang="en">
   <script>
-    console.log(document.URL)
+    console.log(document.URL);
   </script>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-  <body class="bg-[url('/images/home_gp_bg.jpg')] h-[100vh] bg-gray-700 bg-blend-overlay">
-    {pathname === '/' ? <Header home={true} /> : <Header home={false} />}
-    {pathname != '/' ? <h1 class="ml-4 mt-4 text-white text-2xl font-bold uppercase">{pageHeading}</h1> : ''}
+
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{pageTitle}</title>
+
+  <body>
+    {pathname != "/" ? <Header home={false} /> : ""}
+    {
+      pathname != "/" ? (
+        <h1 class="ml-4 mt-4 text-2xl font-bold uppercase text-white">{pageHeading}</h1>
+      ) : (
+        ""
+      )
+    }
     <slot />
     <!-- <Footer /> -->
   </body>
