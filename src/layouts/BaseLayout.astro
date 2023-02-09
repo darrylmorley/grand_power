@@ -1,6 +1,6 @@
 ---
 import Header from "../components/Header.astro";
-// import Footer from "../components/Footer.astro";
+import Footer from "../components/Footer.astro";
 const { pageTitle } = Astro.props;
 const { pathname } = Astro.url;
 let pageHeading = pageTitle.substring(0, pageTitle.indexOf("|"));
@@ -27,6 +27,6 @@ let pageHeading = pageTitle.substring(0, pageTitle.indexOf("|"));
       )
     }
     <slot />
-    <!-- <Footer /> -->
+    <Footer />
   </body>
 </html>
