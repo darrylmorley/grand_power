@@ -1,16 +1,98 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-
 import { fetchProducts } from "../../../prisma/products";
-const products = await fetchProducts()
-console.log(products)
-let stribog = products.filter(product => product.Category?.categoryID === '64')
-let k22 = products.filter(product => product.Category?.categoryID === '113')
+
+const fetchedProducts = await fetchProducts();
+
+const products = fetchedProducts.map((product) => {
+  return {
+    name: product.name.replace("GRAND POWER ", ""),
+    image: `${product.Images.Image[0].baseImageURL}/w_200/${product.Images.Image[0].publicID}.webp`,
+    categoryID: product.Category.categoryID,
+  };
+});
+
+let stribog = products.filter((product) => product.categoryID === "64");
+let k22 = products.filter((product) => product.categoryID === "113");
 ---
 
+<script>
+  const k22Button = document.querySelector("li.k22");
+  const stribogButton = document.querySelector("li.stribog");
+
+  k22Button.addEventListener("click", () => openTab("k22"));
+  stribogButton.addEventListener("click", () => openTab("stribog"));
+
+  function openTab(tabName) {
+    let i;
+    let x = document.getElementsByClassName("gun");
+    // console.log(x);
+
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+
+    tabName === "k22"
+      ? ((k22Button.style.backgroundColor = "#A79258"), (k22Button.style.color = "white"))
+      : ((k22Button.style.backgroundColor = "white"), (k22Button.style.color = "black"));
+
+    tabName === "stribog"
+      ? ((stribogButton.style.backgroundColor = "#A79258"),
+        (stribogButton.style.color = "white"))
+      : ((stribogButton.style.backgroundColor = "white"),
+        (stribogButton.style.color = "black"));
+
+    document.getElementById(tabName).style.display = "block";
+  }
+</script>
+
 <BaseLayout pageTitle="Products | Grand Power UK">
-  <div>
-    <img src="" alt="" />
+  <div
+    class="h-[100vh] bg-gray-700 bg-[url('/images/stribog_kr22.jpg')] bg-blend-overlay"
+  >
+    <div class="flex h-2/4">
+      <div class="mx-[20%] mt-32 grid w-4/5 grid-cols-6">
+        <div class="col-span-1">
+          <ul>
+            <li class="k22 bg-bronze py-4 px-8 font-bold uppercase text-white">
+              <a href="#">K22</a>
+            </li>
+            <li class="stribog bg-white py-4 px-8 font-bold uppercase text-black">
+              <a href="#">Stribog</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-span-5 rounded-r rounded-bl bg-white p-4">
+          <div id="k22" class="gun">
+            <div class="grid grid-cols-3 gap-2">
+              {
+                k22.map((gun) => {
+                  return (
+                    <div class="shadow">
+                      <img src={gun.image} alt={gun.name} />
+                      <p class="text-center font-bold">{gun.name}</p>
+                    </div>
+                  );
+                })
+              }
+            </div>
+          </div>
+          <div id="stribog" class="gun" style="display:none">
+            <div class="grid grid-cols-4 gap-2">
+              {
+                stribog.map((gun) => {
+                  return (
+                    <div>
+                      <img src={gun.image} alt={gun.name} />
+                      <p class="text-center font-bold">{gun.name}</p>
+                    </div>
+                  );
+                })
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  
 </BaseLayout>
