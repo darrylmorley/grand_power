@@ -7,7 +7,7 @@ const fetchedProducts = await fetchProducts();
 const products = fetchedProducts.map((product) => {
   return {
     name: product.name.replace("GRAND POWER ", ""),
-    image: `${product.Images.Image[0].baseImageURL}/w_200/${product.Images.Image[0].publicID}.webp`,
+    image: `${product.Images.Image[0].baseImageURL}/w_300/${product.Images.Image[0].publicID}.webp`,
     categoryID: product.Category.categoryID,
   };
 });
@@ -68,7 +68,7 @@ let k22 = products.filter((product) => product.categoryID === "113");
               {
                 k22.map((gun) => {
                   return (
-                    <div class="shadow">
+                    <div class="flex flex-col justify-center shadow">
                       <img src={gun.image} alt={gun.name} />
                       <p class="text-center font-bold">{gun.name}</p>
                     </div>
