@@ -7,7 +7,7 @@ const fetchedProducts = await fetchProducts();
 const products = fetchedProducts.map((product) => {
   return {
     name: product.name.replace("GRAND POWER ", ""),
-    image: `${product.Images.Image[0].baseImageURL}/w_300/${product.Images.Image[0].publicID}.webp`,
+    image: `${product.Images.Image[0].baseImageURL}/w_400/${product.Images.Image[0].publicID}.webp`,
     categoryID: product.Category.categoryID,
   };
 });
@@ -68,9 +68,9 @@ let k22 = products.filter((product) => product.categoryID === "113");
               {
                 k22.map((gun) => {
                   return (
-                    <div class="flex flex-col justify-center shadow">
+                    <div class="flex h-80 w-80 flex-col items-center justify-center hover:shadow-lg">
                       <img src={gun.image} alt={gun.name} />
-                      <p class="text-center font-bold">{gun.name}</p>
+                      <p class="relative bottom-5 text-center font-bold">{gun.name}</p>
                     </div>
                   );
                 })
@@ -78,13 +78,15 @@ let k22 = products.filter((product) => product.categoryID === "113");
             </div>
           </div>
           <div id="stribog" class="gun" style="display:none">
-            <div class="grid grid-cols-4 gap-2">
+            <div class="grid grid-cols-3 gap-2">
               {
                 stribog.map((gun) => {
                   return (
-                    <div>
-                      <img src={gun.image} alt={gun.name} />
-                      <p class="text-center font-bold">{gun.name}</p>
+                    <div class="flex h-80 w-80 flex-col items-center justify-center hover:shadow-lg">
+                      <div class="flex w-64 justify-center">
+                        <img src={gun.image} alt={gun.name} />
+                      </div>
+                      <p class="relative bottom-5 text-center font-bold">{gun.name}</p>
                     </div>
                   );
                 })
